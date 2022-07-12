@@ -43,13 +43,13 @@ So, an example of execution is: `.\main 5 5000 500 `\
 The program will print on screen the execution time of the serial
 algorithm, of the parallel algorithm with both 1 and the given number of
 C++ threads and of the FastFlow `parallel_for` approach again for both 1
-and given number of threads. Then all the statistics of SpeedUp,
-Efficiency and Scalability are printed together with the real number of
-iterations computed due to the stopping condition (fixed at
-$10^{-11}$).\
-\
+and given number of threads. Then, all the statistics of SpeedUp,
+Efficiency and Scalability are printed. 
+
 In the end it will be asked if you want the print of the computed vector
-$X$ and you answer could be only 'Y' or 'N'.\
+$X$ together with the real number of
+iterations computed due to the stopping condition (fixed at
+$10^{-11}$) and you answer could be only 'Y' or 'N'.\
 \
 Here you can find the [report](Report_Jacobi.pdf) of the entire project with all the
 considerations and the numerical experiments.
