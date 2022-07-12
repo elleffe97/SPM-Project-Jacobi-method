@@ -14,11 +14,11 @@
 Main function of the project.
 
 	Input:
-	- nthread: number of threads
+	- nthread: number of threads - integer >= 1 -	(default 4)
 	
-	- n: matrix dimension
+	- n: matrix dimension -integer > 1-		(default 1000)
 	
-	- N: number of iterations to be performed
+	- N: number of iterations to be performed	- integer > 1 -	(default 500)
 	
 	It performs the execution of the Jacobi method in several version:
 	
@@ -34,16 +34,28 @@ Main function of the project.
 	
 	Then the overhead is computed for the parallelization algorithm with nthread threads.
 	
-	In the end the statistics of Speedup, Scalability and Efficiency are printed for the algorithms.
+	Statistics of Speedup, Scalability and Efficiency are printed for both the parallel algorithms.
+	
+	It will be asked you if you want to see the coputed result x1 and the only answer could be 'Y' or 'N'.
 	
 */
 
 int main(int argc, char * argv[]){
 	
-	vector<int> arg(3,0);
-	arg[0]=atoi(argv[1]);		//number of threads
-	arg[1]=atoi(argv[2]);		//matrix dimension
-	arg[2]=atoi(argv[3]);		//number of iterations
+	vector<int> arg(3,0);		//checking the inputs
+	
+	if (atoi(argv[1])==NULL || atoi(argv[1])<1)		//number of threads
+		arg[0]=4;									//default
+	else
+		arg[0]=atoi(argv[1]);
+	if (atoi(argv[2])==NULL || atoi(argv[2])<=1)	//matrix dimension
+		arg[1]=1000;								//default
+	else
+		arg[1]=atoi(argv[2]);
+	if (atoi(argv[3])==NULL || atoi(argv[3])<=1)	//number of iterations
+		arg[2]=500;								//default
+	else
+		arg[2]=atoi(argv[3]);		
 	
 	long tseq;					//variable for sequential time
 	long tparn;					//variable for threads time	(nthread>1)
@@ -69,7 +81,7 @@ int main(int argc, char * argv[]){
 	cout<<"ParallelFor execution"<<endl<<endl;
 	vector<float> xff=fflow(arg, A, b, &tff);				//result of parallel algorithm with fast flow
 	
-	long timeo=Overhead(arg);						//overhead for parallel thread computation
+	long timeo=Overhead(arg);								//overhead for parallel thread computation
 	
 	arg[0]=1;
 	
@@ -93,7 +105,21 @@ int main(int argc, char * argv[]){
 	
 	cout<< "Speedup = "<< SpUpff<<endl<< "Scalability = "<< Sclff<<endl<<"Efficiency = "<<Effff<<endl<<endl;
 	
-	cout<< "Overhead="<< timeo <<endl;
+	cout<< "Overhead="<< timeo <<endl<<endl;
+	
+	cout<< "Do you want to see the result? (Y/N)"<< endl;
+	
+	char r;
+	
+	cin>>r;
+	
+	if (r=='Y'){
+		fprint(xser);
+		cout<< "Thank you, bye!"<< endl;
+	}
+	else
+		cout<< "No problem, thank you. Bye!"<<endl;
+	
 	
 	
 	
