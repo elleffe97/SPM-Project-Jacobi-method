@@ -7,14 +7,15 @@ The Jacobi method is an iterative way to solve linear systems such as
 $Ax=b$. In each $k + 1$ iteration an $x^{k+1}$ is produced with the closed
 formula:
 
-$$ x_i^{k+1} ={ 1 \over {A_{i i}} b_i \sum_{\substack{ j = 1 \\ j \neq i\\}}^n{ A_{i j} x_j^k }} $$
+$$x_i^{k+1} = { {1 \over {A_{i i}}} b_i \sum_{j=1, j \ne i}^n { A_{i j} x_j^k } }$$
 
 The only hypothesis required for the convergence of the method regards
 the matrix $A$ that must be *row strictly diagonal dominant*.\
+
 \
 *How to use it?*\
 To run the code you need to download and install the Fast Flow library
-at https://github.com/fastflow/fastflow.\
+at https://github.com/fastflow/fastflow. \
 Then to compile must use a compiler which supports `C++` (because of the
 `Barrier` objects).\
 The compilation must contains the flags:
@@ -50,5 +51,5 @@ $10^{-11}$).\
 In the end it will be asked if you want the print of the computed vector
 $X$ and you answer could be only 'Y' or 'N'.\
 \
-Here you can find the [report]{ of the entire project with all the
+Here you can find the [report](Report_Jacobi.pdf) of the entire project with all the
 considerations and the numerical experiments.
