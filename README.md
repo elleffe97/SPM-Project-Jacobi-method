@@ -21,14 +21,15 @@ The compilation must contains the flags:
 
 -   `-pthread`
 
--   `-o3`
+-   `-O3`
 
--   `-C++20`
+-   `-std=c++20`
 
--   `- fastflowflag`
+-   `- ../fastflow/`
 
-So, using `g++`: `g++ -C++20 -pthread -o3 main.cpp -o main` insert
-fastflow flag\
+-   `-I`
+
+So, using `g++`: `g++ -std=c++20 -O3 -I ../fastflow/ -pthread main.cpp -o main`
 Then you just need to execute it, to do that you need to give in input:
 
 -   number of threads: integer $> = 1$ (default $4$ )
