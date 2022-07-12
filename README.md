@@ -1,8 +1,8 @@
 # SPM-Project-Jacobi-method
 Implementation of Jacobi method using `C++` threads and Fast Flow
-library.
-\
-*The method*\
+library. 
+
+## The method ##
 The Jacobi method is an iterative way to solve linear systems such as
 $Ax=b$. In each $k + 1$ iteration an $x^{k+1}$ is produced with the closed
 formula:
@@ -10,10 +10,9 @@ formula:
 $$x_i^{k+1} = { {1 \over {A_{i i}}} b_i \sum_{j=1, j \ne i}^n { A_{i j} x_j^k } }$$
 
 The only hypothesis required for the convergence of the method regards
-the matrix $A$ that must be *row strictly diagonal dominant*.\
+the matrix $A$ that must be *row strictly diagonal dominant*. 
 
-\
-*How to use it?*\
+## How to use it? ##
 To run the code you need to download and install the Fast Flow library
 at https://github.com/fastflow/fastflow. \
 Then, to compile you must use a compiler which supports `C++` (because of the
