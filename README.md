@@ -6,8 +6,9 @@ library.
 The Jacobi method is an iterative way to solve linear systems such as
 $ Ax=b $. In each $k + 1$ iteration an $x^{k+1}$ is produced with the closed
 formula:
-$$x^{k+1}_i = 1 \over {A_{i i}} b_i \sum_{\substack{ j = 1 \\ j \neq i\\}}^n{ A_{i j} x^k_j }. $$
-
+```math
+x^{k+1}_i ={ 1 \over {A_{i i}} b_i \sum_{\substack{ j = 1 \\ j \neq i\\}}^n{ A_{i j} x^k_j }}. 
+```
 The only hypothesis required for the convergence of the method regards
 the matrix $A$ that must be *row strictly diagonal dominant*.\
 \
