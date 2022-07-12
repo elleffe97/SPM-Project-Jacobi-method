@@ -12,9 +12,9 @@ using namespace std;
 File of the main function of the sequential implementation of the Jacobi method
 */
 
-vector<float> serial(vector<int> argv, vector<vector<float>> A, vector<float> b, long * time);
+vector<float> serial(vector<int> argv, vector<vector<float>> A, vector<float> b, long * time, int * NrIter);
 
-vector<float> serial(vector<int> argv, vector<vector<float>> A, vector<float> b, long * time){
+vector<float> serial(vector<int> argv, vector<vector<float>> A, vector<float> b, long * time, int * NrIter){
 	
 	int n=argv[1];
 	
@@ -36,8 +36,10 @@ vector<float> serial(vector<int> argv, vector<vector<float>> A, vector<float> b,
 				
 				x1[i]=(b[i]-sum)/A[i][i];
 			}
-			if(difference(x0, x1))			//stopping condition
+			if(difference(x0, x1)){				//stopping condition
+				*NrIter=k;
 				break;
+			}
 			else
 				x0=x1;
 		}
