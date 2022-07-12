@@ -16,7 +16,7 @@ the matrix $A$ that must be *row strictly diagonal dominant*.\
 *How to use it?*\
 To run the code you need to download and install the Fast Flow library
 at https://github.com/fastflow/fastflow. \
-Then to compile must use a compiler which supports `C++` (because of the
+Then, to compile you must use a compiler which supports `C++` (because of the
 `Barrier` objects).\
 The compilation must contains the flags:
 
