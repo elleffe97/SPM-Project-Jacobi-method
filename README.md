@@ -27,14 +27,10 @@ The compilation must contains the flags:
 
 -   `- ../fastflow/`
 
-<<<<<<< Updated upstream
 -   `-I`
 
 So, using `g++`: `g++ -std=c++20 -O3 -I ../fastflow/ -pthread main.cpp -o main`
-=======
-So, using `g++`: `g++ -C++20 -pthread -O3 main.cpp -o main` insert
-fastflow flag\
->>>>>>> Stashed changes
+
 Then you just need to execute it, to do that you need to give in input:
 
 -   number of threads: integer $> = 1$ (default $4$ )
